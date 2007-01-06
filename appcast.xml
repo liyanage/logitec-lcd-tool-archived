@@ -21,7 +21,7 @@
 				<p>If there’s something you’d like to see included, send me an email and I’ll take a look and decide if it’s of general interest.</p>
 				</li>
 				<li>the <code>window.application.updateDisplay()</code> function now returns a true/false value indicating if the LCD screen was updated successfully. Failure to update probably means that no display is available and any <code>setInterval()</code> timers should be cleared. The default iTunes HTML example was updated accordingly but it is not installed automatically, if you want it you’ll have to copy/paste the new HTML code from the example file or zap the preferences file as noted in the <a href="http://www.entropy.ch/software/macosx/lcdtool/#support">FAQ</a> on the website.</li>
-				<li>Added a new JavaScript API function <code>window.application.getVersion(). It returns the version of the host application so your script can refuse to run if the version is too old. This is useful if you use resources in the new library. You’ll be able to enforce the first version that shipped with the resources you use.</code></li>
+				<li>Added a new JavaScript API function <code>window.application.getVersion()</code>. It returns the version of the host application so your script can refuse to run if the version is too old. This is useful if you use resources in the new library. You’ll be able to enforce the first version that shipped with the resources you use.</li>
 			</ul>
 		]]></description>
 		<pubDate>Sat, 06 Jan 2007 20:00:00 +0100</pubDate>

@@ -1430,7 +1430,7 @@
 		fRef = 1BD789720B4950C90094B0E4 /* appcast.xml */;
 		name = enforce;
 		rLen = 7;
-		rLoc = 3051;
+		rLoc = 3058;
 		rType = 0;
 		vrLen = 4094;
 		vrLoc = 0;
@@ -1460,7 +1460,7 @@
 		fRef = 1BD789720B4950C90094B0E4 /* appcast.xml */;
 		name = enforce;
 		rLen = 7;
-		rLoc = 3051;
+		rLoc = 3058;
 		rType = 0;
 		vrLen = 4094;
 		vrLoc = 0;
@@ -2466,7 +2466,7 @@
 		fRef = 1BD789720B4950C90094B0E4 /* appcast.xml */;
 		name = enforce;
 		rLen = 7;
-		rLoc = 3051;
+		rLoc = 3058;
 		rType = 0;
 		vrLen = 4094;
 		vrLoc = 0;
@@ -2961,6 +2961,26 @@
 		vrLen = 3445;
 		vrLoc = 265;
 	};
+	1B8FECBB0B5031E000838605 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1BD789720B4950C90094B0E4 /* appcast.xml */;
+		name = "appcast.xml: 16";
+		rLen = 0;
+		rLoc = 669;
+		rType = 0;
+		vrLen = 4027;
+		vrLoc = 0;
+	};
+	1B8FECBC0B5031E000838605 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1BD789720B4950C90094B0E4 /* appcast.xml */;
+		name = "appcast.xml: 24";
+		rLen = 0;
+		rLoc = 2875;
+		rType = 0;
+		vrLen = 3457;
+		vrLoc = 332;
+	};
 	1BA9D2390B42BC2800BE67E3 /* NSBitmapImageRep.h */ = {
 		isa = PBXFileReference;
 		lastKnownFileType = sourcecode.c.h;
@@ -3162,8 +3182,8 @@
 	1BD789720B4950C90094B0E4 /* appcast.xml */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {809, 923}}";
-			sepNavSelRange = "{1609, 0}";
-			sepNavVisRect = "{{0, 82}, {809, 696}}";
+			sepNavSelRange = "{2875, 0}";
+			sepNavVisRect = "{{0, 130}, {809, 696}}";
 		};
 	};
 	1BD7897E0B4953E50094B0E4 /* Dist */ = {
@@ -3773,6 +3793,8 @@
 			1B8FECB20B502FC200838605 /* PBXTextBookmark */ = 1B8FECB20B502FC200838605 /* PBXTextBookmark */;
 			1B8FECB60B50301B00838605 /* PBXTextBookmark */ = 1B8FECB60B50301B00838605 /* PBXTextBookmark */;
 			1B8FECB70B50301B00838605 /* PBXTextBookmark */ = 1B8FECB70B50301B00838605 /* PBXTextBookmark */;
+			1B8FECBB0B5031E000838605 /* PBXTextBookmark */ = 1B8FECBB0B5031E000838605 /* PBXTextBookmark */;
+			1B8FECBC0B5031E000838605 /* PBXTextBookmark */ = 1B8FECBC0B5031E000838605 /* PBXTextBookmark */;
 			1BA9D24D0B42BC3C00BE67E3 = 1BA9D24D0B42BC3C00BE67E3 /* PBXTextBookmark */;
 			1BA9D2640B42C6AC00BE67E3 = 1BA9D2640B42C6AC00BE67E3 /* PBXTextBookmark */;
 			1BA9D2C20B42DABB00BE67E3 = 1BA9D2C20B42DABB00BE67E3 /* PBXTextBookmark */;
