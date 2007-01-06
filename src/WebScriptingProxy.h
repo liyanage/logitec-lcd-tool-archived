@@ -9,8 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
+@protocol WebScriptingProxyAppDelegate <NSObject>
+- (BOOL)webViewUpdatesAllowed;
+- (void)clearOffscreenWebView;
+- (NSString *)getAppVersion;
+@end
+
 @interface WebScriptingProxy : NSObject {
-	id delegate;
+	id<WebScriptingProxyAppDelegate> delegate;
 	NSMutableDictionary *appleScripts;
 	struct timeval lastUpdateTime;
 }
@@ -24,9 +30,3 @@
 - (NSAppleScript *)compileAppleScript:(NSString *)code;
 @end
 
-@interface NSObject (WebScriptingProxyAppDelegate)
-
-- (BOOL)webViewUpdatesAllowed;
-- (void)clearOffscreenWebView;
-
-@end

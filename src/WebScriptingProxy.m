@@ -52,9 +52,22 @@
 }
 
 
+- (NSAppleScript *)compileAppleScript:(NSString *)code {
+	NSAppleScript *script = [[[NSAppleScript alloc] initWithSource:code] autorelease];
+	NSDictionary *errorInfo;
+	if (![script compileAndReturnError:&errorInfo]) {
+		NSLog(@"Failed to compile AppleScript code: '%@', offending code: '%@'", [errorInfo valueForKey:NSAppleScriptErrorMessage], code);
+		return nil;
+	}
+	return script;
+}
+
+
+
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector {
 	if (
 		aSelector == @selector(updateDisplay) ||
+		aSelector == @selector(getVersion) ||
 		aSelector == @selector(runSystemScript:) ||
 		aSelector == @selector(registerUserScript:code:) ||
 		aSelector == @selector(runUserScript:)
@@ -70,29 +83,20 @@
 	return nil;
 }
 
-- (NSAppleScript *)compileAppleScript:(NSString *)code {
-	NSAppleScript *script = [[[NSAppleScript alloc] initWithSource:code] autorelease];
-	NSDictionary *errorInfo;
-	if (![script compileAndReturnError:&errorInfo]) {
-		NSLog(@"Failed to compile AppleScript code: '%@', offending code: '%@'", [errorInfo valueForKey:NSAppleScriptErrorMessage], code);
-		return nil;
-	}
-	return script;
-}
-
 
 /* The following methods are called from JavaScript */
 
-- (void)updateDisplay {
-	if (![delegate webViewUpdatesAllowed]) return;
+- (BOOL)updateDisplay {
+	if (![delegate webViewUpdatesAllowed]) return NO;
 	if ([self updateTooFrequent]) {
 		NSLog(@"Update JavaScript call to updateDisplay() too frequent, stopping...");
 		[delegate clearOffscreenWebView];
-		return;
+		return NO;
 	}
 //	NSLog(@"updateDisplay from JavaScript");
 	[delegate performSelectorOnMainThread:@selector(captureWebView) withObject:nil waitUntilDone:NO];
 	gettimeofday(&lastUpdateTime, NULL);
+	return YES;
 }
 
 
@@ -116,6 +120,10 @@
 
 - (NSString *)runUserScript:(NSString *)key {
 	return [self runSystemScript:key];
+}
+
+- (NSString *)getVersion {
+	return [delegate getAppVersion];
 }
 
 

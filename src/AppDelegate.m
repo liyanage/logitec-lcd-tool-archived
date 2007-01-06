@@ -5,10 +5,6 @@
 @implementation AppDelegate
 
 
-// http://www.rogueamoeba.com/utm/archives/rslight.c
-
-
-
 - (void)awakeFromNib {
 	uhd = [[UsbHidDevice alloc] init];
 	[self setValue:@"htmlCode" forKey:@"selectedTabIdentifier"];
@@ -22,6 +18,7 @@
 	[uhd release];
 	[webViewWindow release];
 	[scriptingProxy release];
+	[baseUrl release];
 	[super dealloc];
 }
 
@@ -36,8 +33,9 @@
 	offscreenWebView = [[[WebView alloc] initWithFrame:NSMakeRect(0, 0, 160, 43)] autorelease]; // retained by window
 	[[webViewWindow contentView] addSubview:offscreenWebView];
 	[webViewWindow setReleasedWhenClosed:NO];
-	[offscreenWebView setFrameLoadDelegate:self];
+	[offscreenWebView setFrameLoadDelegate:self]; // for knowing when to capture bitmap representation
 	[offscreenWebView setUIDelegate:self]; // for JS alert()
+	baseUrl = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@".baseurl" ofType:@"html" inDirectory:@"library"]];
 }
 
 
@@ -96,7 +94,8 @@
 	NSString *htmlCode = [[NSUserDefaults standardUserDefaults] valueForKey:@"htmlCode"];
 	if (!htmlCode) return;
 	allowWebViewUpdates = YES;
-	[[offscreenWebView mainFrame] loadHTMLString:htmlCode baseURL:NULL];
+//	[[offscreenWebView mainFrame] loadHTMLString:htmlCode baseURL:baseUrl];
+	[[offscreenWebView mainFrame] loadData:[htmlCode dataUsingEncoding:NSUTF8StringEncoding] MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:baseUrl];
 	// continue in frame load completion delegate method below
 }
 
@@ -119,7 +118,7 @@
 	NSImage *img = [[[NSImage alloc] initWithSize:NSMakeSize(160, 43)] autorelease];
 	[img addRepresentation:bmr];
 	[self setValue:img forKey:@"currentImage"];
-	[uhd sendImage:bmr];
+	allowWebViewUpdates = [uhd sendImage:bmr];
 }
 
 
@@ -151,11 +150,22 @@
 }
 
 
+- (NSString *)getAppVersion {
+	return [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"];
+}
 
-/* sent to first responder when the user selects the Help menu */
 
 - (IBAction)showHelp:(id)sender {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.entropy.ch/software/macosx/lcdtool/?showhelp"]];
+}
+
+- (IBAction)openExamplesFolder:(id)sender {
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"examples" ofType:@""];
+	[[NSWorkspace sharedWorkspace] openFile:path];
+}
+- (IBAction)openLibraryFolder:(id)sender {
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"library" ofType:@""];
+	[[NSWorkspace sharedWorkspace] openFile:path];
 }
 
 
@@ -164,6 +174,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[self setupDefaultPrefs];
+	BOOL autostart = [[[NSUserDefaults standardUserDefaults] valueForKey:@"DisplayAtStartup"] boolValue];
+	if (autostart) [self displayCurrentTabContents:nil];
 }
 
 /* end app delegate methods */
@@ -193,6 +205,11 @@
 }
 
 /* end WebView ui delegate methods */
+
+
+
+
+
 
 
 

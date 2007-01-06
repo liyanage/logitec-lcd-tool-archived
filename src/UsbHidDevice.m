@@ -19,22 +19,19 @@
 }
 
 
-- (void)sendTestImage1 {
-	[self sendFormattedBitmap:report1];
+- (BOOL)sendTestImage1 {
+	return [self sendFormattedBitmap:report1];
 }
 
-- (void)sendTestImage2 {
-	[self sendFormattedBitmap:report2];
+- (BOOL)sendTestImage2 {
+	return [self sendFormattedBitmap:report2];
 }
 
 
-
-
-- (void)sendImage:(NSBitmapImageRep *)rep {
-
+- (BOOL)sendImage:(NSBitmapImageRep *)rep {
 	if (!rep) {
 		NSLog(@"sendImage: NULL NSBitmapImageRep");
-		return;
+		return NO;
 	}
 	
 	unsigned char blackwhite_buffer[G15_BUFFER_LEN];
@@ -55,43 +52,43 @@
 			blackwhite_buffer[index] = blackwhite_buffer[index] | value;
 		}
 	}
-
-	[self sendLinearBitmap:blackwhite_buffer];
-
+	return [self sendLinearBitmap:blackwhite_buffer];
 }
 
 
-- (void)sendLinearBitmap:(unsigned char *)data {
+- (BOOL)sendLinearBitmap:(unsigned char *)data {
 	unsigned char lcd_buffer[G15_BUFFER_LEN];
 	memset(lcd_buffer, 0, G15_BUFFER_LEN);
 	dumpPixmapIntoLCDFormat(lcd_buffer, data);
 	lcd_buffer[0] = 0x03; // The USB HID report ID?
-	[self sendFormattedBitmap:lcd_buffer];
+	return [self sendFormattedBitmap:lcd_buffer];
 }
 
 
-- (void)sendFormattedBitmap:(unsigned char *)data {
-	if (![self openHidDeviceInterfaces]) return;
+- (BOOL)sendFormattedBitmap:(unsigned char *)data {
+	if (![self openHidDeviceInterfaces]) return NO;
 	IOReturn ioReturnValue = (*hidDeviceInterfaceVendorPage)->setReport(
 		hidDeviceInterfaceVendorPage, kIOHIDReportTypeOutput,
 		0, data, G15_BUFFER_LEN, 5000, NULL, NULL, NULL
 	);
-	if (ioReturnValue) [self closeAndReleaseHidDeviceInterfaces];
+	if (ioReturnValue) {
+		[self closeAndReleaseHidDeviceInterfaces];
+		return NO;
+	}
+	return YES;
 }
 
 
 
 
-- (void)sendImageAtUrl:(NSString *)url {
-
+- (BOOL)sendImageAtUrl:(NSString *)url {
 	if (!url) {
 		NSLog(@"sendImageAtUrl: NULL URL");
-		return;
+		return NO;
 	}
-	
 	// This assumes that url points to a bitmap image, not PDF
 	NSImage *img = [[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:url]] autorelease];
-	[self sendImage:[[img representations] objectAtIndex:0]];
+	return [self sendImage:[[img representations] objectAtIndex:0]];
 }
 
 
@@ -236,6 +233,7 @@ static void QueueCallbackFunction(void *target, IOReturn result, void *refcon, v
 
 	SInt32 usbVendor = 0x046d;  // Logitech
 	SInt32 usbProduct = 0x0a07; // Z-10 I guess
+//	SInt32 usbProduct = 0xc222; // G15
 	SInt32 usbUsagePage = usagePage;
 
 	NSMutableDictionary *matchDict = (NSMutableDictionary *)IOServiceMatching(kIOHIDDeviceKey);

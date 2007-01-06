@@ -5,10 +5,13 @@
                 displayCurrentTabContents = id; 
                 displayHtmlTabContents = id; 
                 displayUrlTabContents = id; 
+                openExamplesFolder = id; 
+                openLibraryFolder = id; 
                 showHelp = id; 
             }; 
             CLASS = AppDelegate; 
             LANGUAGE = ObjC; 
+            OUTLETS = {offscreenWebView = WebView; }; 
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 

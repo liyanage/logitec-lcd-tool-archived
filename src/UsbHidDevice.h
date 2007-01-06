@@ -63,12 +63,12 @@ static void QueueCallbackFunction(void *target, IOReturn result, void *refcon, v
 - (void)handleHidEvent:(IOHIDQueueInterface **)queue;
 - (void)closeAndReleaseHidDeviceInterfaces;
 - (void)releaseHidDeviceInterfaces;
-- (void)sendLinearBitmap:(unsigned char *)data;
-- (void)sendFormattedBitmap:(unsigned char *)data;
-- (void)sendImageAtUrl:(NSString *)url;
-- (void)sendImage:(NSBitmapImageRep *)rep;
-- (void)sendTestImage1;
-- (void)sendTestImage2;
+- (BOOL)sendLinearBitmap:(unsigned char *)data;
+- (BOOL)sendFormattedBitmap:(unsigned char *)data;
+- (BOOL)sendImageAtUrl:(NSString *)url;
+- (BOOL)sendImage:(NSBitmapImageRep *)rep;
+- (BOOL)sendTestImage1;
+- (BOOL)sendTestImage2;
 @end
 
 

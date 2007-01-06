@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1B6BE27B0B4D89050079FFD5 /* library in Resources */ = {isa = PBXBuildFile; fileRef = 1B6BE2780B4D89050079FFD5 /* library */; };
 		1B745B8B0B444E27002D019A /* WebScriptingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B745B8A0B444E27002D019A /* WebScriptingProxy.m */; };
 		1B745D1B0B445ACE002D019A /* SystemAppleScripts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B745D1A0B445ACE002D019A /* SystemAppleScripts.plist */; };
 		1B745DE40B452CCC002D019A /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B745DE30B452CCC002D019A /* icon.icns */; };
@@ -32,6 +33,7 @@
 		1BBAEBF00B37525300957377 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBAEBEF0B37525300957377 /* IOKit.framework */; };
 		1BD7894A0B494B2E0094B0E4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD789490B494B2E0094B0E4 /* Sparkle.framework */; };
 		1BD789650B494B800094B0E4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BD789490B494B2E0094B0E4 /* Sparkle.framework */; };
+		1BE97AFB0B4D2478001D0D92 /* examples in Resources */ = {isa = PBXBuildFile; fileRef = 1BE97AF50B4D2478001D0D92 /* examples */; };
 		1BFB70F80B41AD9000B25122 /* UsbHidDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB70F70B41AD9000B25122 /* UsbHidDevice.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -44,7 +46,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D1107260486CEB800E47090 /* LogitechLCDTool */;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
 			remoteInfo = LogitechLCDTool;
 		};
 /* End PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1B6BE2780B4D89050079FFD5 /* library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = library; sourceTree = "<group>"; };
 		1B745B890B444E27002D019A /* WebScriptingProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebScriptingProxy.h; path = src/WebScriptingProxy.h; sourceTree = "<group>"; };
 		1B745B8A0B444E27002D019A /* WebScriptingProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebScriptingProxy.m; path = src/WebScriptingProxy.m; sourceTree = "<group>"; };
 		1B745D1A0B445ACE002D019A /* SystemAppleScripts.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = SystemAppleScripts.plist; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 		1BD789490B494B2E0094B0E4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Frameworks/Sparkle-1.1/Sparkle.framework"; sourceTree = "<group>"; };
 		1BD789720B4950C90094B0E4 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		1BD789DD0B4956000094B0E4 /* dist.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dist.sh; sourceTree = "<group>"; };
+		1BE97AD40B4C00DF001D0D92 /* notes_links.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes_links.txt; sourceTree = "<group>"; };
+		1BE97AF50B4D2478001D0D92 /* examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = examples; sourceTree = "<group>"; };
 		1BFB70F60B41AD9000B25122 /* UsbHidDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsbHidDevice.h; path = src/UsbHidDevice.h; sourceTree = "<group>"; };
 		1BFB70F70B41AD9000B25122 /* UsbHidDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsbHidDevice.m; path = src/UsbHidDevice.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -150,15 +155,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1BD78AE20B4A87090094B0E4 /* Build Support */ = {
+			isa = PBXGroup;
+			children = (
+				1BD789DD0B4956000094B0E4 /* dist.sh */,
+			);
+			name = "Build Support";
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* LogitechLCDTool */ = {
 			isa = PBXGroup;
 			children = (
+				1BE97AD40B4C00DF001D0D92 /* notes_links.txt */,
+				1BD78AE20B4A87090094B0E4 /* Build Support */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				1BD789DD0B4956000094B0E4 /* dist.sh */,
 			);
 			name = LogitechLCDTool;
 			sourceTree = "<group>";
@@ -175,13 +189,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BD789720B4950C90094B0E4 /* appcast.xml */,
+				1B6BE2780B4D89050079FFD5 /* library */,
+				1BE97AF50B4D2478001D0D92 /* examples */,
 				1B745E590B4539ED002D019A /* DefaultPrefs.plist */,
 				1B745DE30B452CCC002D019A /* icon.icns */,
 				1B745D1A0B445ACE002D019A /* SystemAppleScripts.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
-				1BD789720B4950C90094B0E4 /* appcast.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -243,6 +259,8 @@
 				1B745D1B0B445ACE002D019A /* SystemAppleScripts.plist in Resources */,
 				1B745DE40B452CCC002D019A /* icon.icns in Resources */,
 				1B745E5A0B4539ED002D019A /* DefaultPrefs.plist in Resources */,
+				1BE97AFB0B4D2478001D0D92 /* examples in Resources */,
+				1B6BE27B0B4D89050079FFD5 /* library in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
