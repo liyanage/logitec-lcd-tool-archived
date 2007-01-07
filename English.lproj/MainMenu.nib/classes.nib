@@ -11,7 +11,11 @@
             }; 
             CLASS = AppDelegate; 
             LANGUAGE = ObjC; 
-            OUTLETS = {offscreenWebView = WebView; }; 
+            OUTLETS = {
+                htmlTextView = NSTextView; 
+                mainWindow = NSWindow; 
+                offscreenWebView = WebView; 
+            }; 
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 

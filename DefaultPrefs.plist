@@ -4,6 +4,8 @@
 <dict>
 	<key>DisplayAtStartup</key>
 	<true/>
+	<key>RunSheetForJSAlerts</key>
+	<true/>
 	<key>imageUrl</key>
 	<string>http://www.entropy.ch/images/logitech-example.png</string>
 	<key>htmlCode</key>

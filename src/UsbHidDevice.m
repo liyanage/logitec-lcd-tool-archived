@@ -20,11 +20,11 @@
 
 
 - (BOOL)sendTestImage1 {
-	return [self sendFormattedBitmap:report1];
+	return [self sendTransposedBitmap:report1];
 }
 
 - (BOOL)sendTestImage2 {
-	return [self sendFormattedBitmap:report2];
+	return [self sendTransposedBitmap:report2];
 }
 
 
@@ -40,12 +40,19 @@
 	int repW = [rep pixelsWide];
 	int repH = [rep pixelsHigh];
 	int samples = [rep samplesPerPixel];
-	int x, y;
+	unsigned char *pixel, *bitmap = [rep bitmapData];
+	int rowBytes = [rep bytesPerRow];
+	unsigned int i, offset, value, x, y;
 	for (y = 0; y < G15_LCD_HEIGHT && y < repH; y++) {
 		for (x = 0; x < G15_LCD_WIDTH && x < repW; x++) {
-			unsigned int data[4] = {0, 0, 0, 0};
-			[rep getPixel:data atX:x y:y]; // fixme: this is fairly expensive, need to optimize
-			unsigned int value = (samples > 1 ? data[0] + data[1] + data[2] : data[0]) / samples; // reduce 24-bit RGB to 8-bit with average
+			offset = y * rowBytes + x * samples;
+			pixel = bitmap + offset;
+			value = 0, i;
+			
+			for (i = 0; i < samples; i++) {
+				value += *(pixel + i);
+			}
+			value = value / samples;
 			value = value > 150 ? 0 : 1; // reduce 8-bit to 1 bit with threshold
 			value = value << 7 - x % 8; // shift the bit value to its position in the output buffer byte
 			int index = y * (G15_LCD_WIDTH / 8) + x / 8; // output buffer byte index
@@ -61,11 +68,11 @@
 	memset(lcd_buffer, 0, G15_BUFFER_LEN);
 	dumpPixmapIntoLCDFormat(lcd_buffer, data);
 	lcd_buffer[0] = 0x03; // The USB HID report ID?
-	return [self sendFormattedBitmap:lcd_buffer];
+	return [self sendTransposedBitmap:lcd_buffer];
 }
 
 
-- (BOOL)sendFormattedBitmap:(unsigned char *)data {
+- (BOOL)sendTransposedBitmap:(unsigned char *)data {
 	if (![self openHidDeviceInterfaces]) return NO;
 	IOReturn ioReturnValue = (*hidDeviceInterfaceVendorPage)->setReport(
 		hidDeviceInterfaceVendorPage, kIOHIDReportTypeOutput,

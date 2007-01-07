@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleGetInfoString</key>
-	<string>0.7b, © 2006-2007 Marc Liyanage</string>
+	<string>0.8b, © 2006-2007 Marc Liyanage</string>
 	<key>CFBundleVersion</key>
-	<string>0.7b</string>
+	<string>0.8b</string>
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>

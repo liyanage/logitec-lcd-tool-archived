@@ -6,6 +6,31 @@
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
 
+<!--
+
+	<item>
+		<title>Version 0.8b</title>
+		<description><![CDATA[
+			<p>Of interest to everyone:</p>
+			<ul>
+				<li>Image drawing was optimized, resulting in lower CPU load when updating continuously, which is how most people run it.</li>
+			</ul>
+			
+			<p>Of interest to developers:</p>
+			<ul>
+				<li>JavaScript errors now pop up a sheet with the error message and select the offending line. The messages are also sent to the console log which you can watch with the Console utility.</li>
+				<li>JavaScript alerts now pop up a sheet. Alert messages are also sent to the console log.</li>
+				<li>Added a preferences option to disable the sheet for alerts. Because the messages still show up in the console log, this option is useful if you use lots of alert() calls during JavaScript development.</li>
+			</ul>
+		]]></description>
+		<pubDate>Sat, 06 Jan 2007 20:00:00 +0100</pubDate>
+		<enclosure url="http://www2.entropy.ch/download/LogitechLCDTool_0.8b.zip" length="763388" type="application/octet-stream"/>
+	</item>
+
+
+-->
+
+
 	<item>
 		<title>Version 0.7b</title>
 		<description><![CDATA[

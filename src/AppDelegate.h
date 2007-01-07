@@ -21,6 +21,8 @@
 	WebScriptingProxy *scriptingProxy;
 	BOOL allowWebViewUpdates;
 	WebScriptObject *currentWindowScriptObject;
+	NSTextView *htmlTextView;
+	NSWindow *mainWindow;
 }
 
 - (IBAction)displayUrlTabContents:(id)sender;

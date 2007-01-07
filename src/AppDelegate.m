@@ -169,7 +169,6 @@
 }
 
 
-
 /* start app delegate methods */
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -202,6 +201,24 @@
 
 - (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message {
 	NSLog(@"JavaScript alert message: %@", message);
+	BOOL runPanel = [[[NSUserDefaults standardUserDefaults] valueForKey:@"RunSheetForJSAlerts"] boolValue];
+	if (runPanel) NSBeginAlertSheet(@"JavaScript Alert", nil, nil, nil, mainWindow, nil, nil, nil, nil, message);
+}
+
+// This one is undocumented, might break in the future
+//
+// http://www.archivesat.com/A_discussion_list_for_developers_using_the_WebKit_SDK/thread371974.htm
+//
+- (void)webView:(WebView *)webView addMessageToConsole:(NSDictionary *)message {
+	NSString *msg = [NSString stringWithFormat:@"JavaScript error on line %@: %@", [message valueForKey:@"lineNumber"], [message valueForKey:@"message"]];
+	NSLog(msg);
+	int line = [[message valueForKey:@"lineNumber"] intValue];
+	id paras = [[htmlTextView textStorage] paragraphs];
+	unsigned int i, rangeStart = 0;
+	for (i = 0; i < line - 2; i++) rangeStart += [[paras objectAtIndex:i] length];
+	[htmlTextView setSelectedRange:NSMakeRange(rangeStart, [[paras objectAtIndex:i] length])];
+	NSBeginAlertSheet(@"JavaScript Error", nil, nil, nil, mainWindow, nil, nil, nil, nil, msg);
+	[self clearOffscreenWebView];
 }
 
 /* end WebView ui delegate methods */
