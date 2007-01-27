@@ -1,0 +1,1 @@
+open location "http://www.entropy.ch/software/macosx/lcdtool/?softkey"

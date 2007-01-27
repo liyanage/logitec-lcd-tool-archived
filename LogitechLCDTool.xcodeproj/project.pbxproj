@@ -21,10 +21,32 @@
 		};
 /* End PBXAggregateTarget section */
 
+/* Begin PBXAppleScriptBuildPhase section */
+		1B23AF780B6BFEA500D25073 /* AppleScript */ = {
+			isa = PBXAppleScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "System Applescripts\n";
+			contextName = "";
+			files = (
+				1BF779A40B6C06D20092DF9F /* iTunesCurrentTrackArtist.applescript in AppleScript */,
+				1BF779A50B6C06D20092DF9F /* iTunesPlayPause.applescript in AppleScript */,
+				1BF779A60B6C06D20092DF9F /* iTunesCurrentTrackFullStatus.applescript in AppleScript */,
+				1BF779A70B6C06D20092DF9F /* iTunesPlayerPosition.applescript in AppleScript */,
+				1BF779A80B6C06D20092DF9F /* iTunesCurrentTrackDuration.applescript in AppleScript */,
+				1BF779A90B6C06D20092DF9F /* iTunesNextTrack.applescript in AppleScript */,
+				1BF779AA0B6C06D20092DF9F /* iTunesCurrentTrackTitle.applescript in AppleScript */,
+				1BF779AB0B6C06D20092DF9F /* visitEntropyWebsite.applescript in AppleScript */,
+				1BF779AC0B6C06D20092DF9F /* iTunesPreviousTrack.applescript in AppleScript */,
+				1BF779F50B6C07A80092DF9F /* iTunesActivate.applescript in AppleScript */,
+			);
+			isSharedContext = 0;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXAppleScriptBuildPhase section */
+
 /* Begin PBXBuildFile section */
 		1B6BE27B0B4D89050079FFD5 /* library in Resources */ = {isa = PBXBuildFile; fileRef = 1B6BE2780B4D89050079FFD5 /* library */; };
 		1B745B8B0B444E27002D019A /* WebScriptingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B745B8A0B444E27002D019A /* WebScriptingProxy.m */; };
-		1B745D1B0B445ACE002D019A /* SystemAppleScripts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B745D1A0B445ACE002D019A /* SystemAppleScripts.plist */; };
 		1B745DE40B452CCC002D019A /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B745DE30B452CCC002D019A /* icon.icns */; };
 		1B745E5A0B4539ED002D019A /* DefaultPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B745E590B4539ED002D019A /* DefaultPrefs.plist */; };
 		1BA9D0FC0B42819100BE67E3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA9D0FB0B42819100BE67E3 /* WebKit.framework */; };
@@ -34,6 +56,16 @@
 		1BD7894A0B494B2E0094B0E4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD789490B494B2E0094B0E4 /* Sparkle.framework */; };
 		1BD789650B494B800094B0E4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BD789490B494B2E0094B0E4 /* Sparkle.framework */; };
 		1BE97AFB0B4D2478001D0D92 /* examples in Resources */ = {isa = PBXBuildFile; fileRef = 1BE97AF50B4D2478001D0D92 /* examples */; };
+		1BF779A40B6C06D20092DF9F /* iTunesCurrentTrackArtist.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF7799B0B6C06D20092DF9F /* iTunesCurrentTrackArtist.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779A50B6C06D20092DF9F /* iTunesPlayPause.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF7799C0B6C06D20092DF9F /* iTunesPlayPause.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779A60B6C06D20092DF9F /* iTunesCurrentTrackFullStatus.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF7799D0B6C06D20092DF9F /* iTunesCurrentTrackFullStatus.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779A70B6C06D20092DF9F /* iTunesPlayerPosition.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF7799E0B6C06D20092DF9F /* iTunesPlayerPosition.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779A80B6C06D20092DF9F /* iTunesCurrentTrackDuration.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF7799F0B6C06D20092DF9F /* iTunesCurrentTrackDuration.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779A90B6C06D20092DF9F /* iTunesNextTrack.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF779A00B6C06D20092DF9F /* iTunesNextTrack.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779AA0B6C06D20092DF9F /* iTunesCurrentTrackTitle.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF779A10B6C06D20092DF9F /* iTunesCurrentTrackTitle.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779AB0B6C06D20092DF9F /* visitEntropyWebsite.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF779A20B6C06D20092DF9F /* visitEntropyWebsite.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779AC0B6C06D20092DF9F /* iTunesPreviousTrack.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF779A30B6C06D20092DF9F /* iTunesPreviousTrack.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		1BF779F50B6C07A80092DF9F /* iTunesActivate.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 1BF779F40B6C07A80092DF9F /* iTunesActivate.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		1BFB70F80B41AD9000B25122 /* UsbHidDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB70F70B41AD9000B25122 /* UsbHidDevice.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -71,7 +103,6 @@
 		1B6BE2780B4D89050079FFD5 /* library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = library; sourceTree = "<group>"; };
 		1B745B890B444E27002D019A /* WebScriptingProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebScriptingProxy.h; path = src/WebScriptingProxy.h; sourceTree = "<group>"; };
 		1B745B8A0B444E27002D019A /* WebScriptingProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebScriptingProxy.m; path = src/WebScriptingProxy.m; sourceTree = "<group>"; };
-		1B745D1A0B445ACE002D019A /* SystemAppleScripts.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = SystemAppleScripts.plist; sourceTree = "<group>"; };
 		1B745DE30B452CCC002D019A /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = artwork/icon.icns; sourceTree = "<group>"; };
 		1B745E590B4539ED002D019A /* DefaultPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = DefaultPrefs.plist; sourceTree = "<group>"; };
 		1BA9D0FB0B42819100BE67E3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
@@ -85,6 +116,16 @@
 		1BD789DD0B4956000094B0E4 /* dist.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dist.sh; sourceTree = "<group>"; };
 		1BE97AD40B4C00DF001D0D92 /* notes_links.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes_links.txt; sourceTree = "<group>"; };
 		1BE97AF50B4D2478001D0D92 /* examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = examples; sourceTree = "<group>"; };
+		1BF7799B0B6C06D20092DF9F /* iTunesCurrentTrackArtist.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesCurrentTrackArtist.applescript; path = AppleScripts/iTunesCurrentTrackArtist.applescript; sourceTree = "<group>"; };
+		1BF7799C0B6C06D20092DF9F /* iTunesPlayPause.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesPlayPause.applescript; path = AppleScripts/iTunesPlayPause.applescript; sourceTree = "<group>"; };
+		1BF7799D0B6C06D20092DF9F /* iTunesCurrentTrackFullStatus.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesCurrentTrackFullStatus.applescript; path = AppleScripts/iTunesCurrentTrackFullStatus.applescript; sourceTree = "<group>"; };
+		1BF7799E0B6C06D20092DF9F /* iTunesPlayerPosition.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesPlayerPosition.applescript; path = AppleScripts/iTunesPlayerPosition.applescript; sourceTree = "<group>"; };
+		1BF7799F0B6C06D20092DF9F /* iTunesCurrentTrackDuration.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesCurrentTrackDuration.applescript; path = AppleScripts/iTunesCurrentTrackDuration.applescript; sourceTree = "<group>"; };
+		1BF779A00B6C06D20092DF9F /* iTunesNextTrack.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesNextTrack.applescript; path = AppleScripts/iTunesNextTrack.applescript; sourceTree = "<group>"; };
+		1BF779A10B6C06D20092DF9F /* iTunesCurrentTrackTitle.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesCurrentTrackTitle.applescript; path = AppleScripts/iTunesCurrentTrackTitle.applescript; sourceTree = "<group>"; };
+		1BF779A20B6C06D20092DF9F /* visitEntropyWebsite.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = visitEntropyWebsite.applescript; path = AppleScripts/visitEntropyWebsite.applescript; sourceTree = "<group>"; };
+		1BF779A30B6C06D20092DF9F /* iTunesPreviousTrack.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesPreviousTrack.applescript; path = AppleScripts/iTunesPreviousTrack.applescript; sourceTree = "<group>"; };
+		1BF779F40B6C07A80092DF9F /* iTunesActivate.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = iTunesActivate.applescript; path = AppleScripts/iTunesActivate.applescript; sourceTree = "<group>"; };
 		1BFB70F60B41AD9000B25122 /* UsbHidDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsbHidDevice.h; path = src/UsbHidDevice.h; sourceTree = "<group>"; };
 		1BFB70F70B41AD9000B25122 /* UsbHidDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsbHidDevice.m; path = src/UsbHidDevice.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -155,6 +196,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1B23AF800B6BFECB00D25073 /* AppleScripts */ = {
+			isa = PBXGroup;
+			children = (
+				1BF779F40B6C07A80092DF9F /* iTunesActivate.applescript */,
+				1BF7799B0B6C06D20092DF9F /* iTunesCurrentTrackArtist.applescript */,
+				1BF7799C0B6C06D20092DF9F /* iTunesPlayPause.applescript */,
+				1BF7799D0B6C06D20092DF9F /* iTunesCurrentTrackFullStatus.applescript */,
+				1BF7799E0B6C06D20092DF9F /* iTunesPlayerPosition.applescript */,
+				1BF7799F0B6C06D20092DF9F /* iTunesCurrentTrackDuration.applescript */,
+				1BF779A00B6C06D20092DF9F /* iTunesNextTrack.applescript */,
+				1BF779A10B6C06D20092DF9F /* iTunesCurrentTrackTitle.applescript */,
+				1BF779A20B6C06D20092DF9F /* visitEntropyWebsite.applescript */,
+				1BF779A30B6C06D20092DF9F /* iTunesPreviousTrack.applescript */,
+			);
+			name = AppleScripts;
+			sourceTree = "<group>";
+		};
 		1BD78AE20B4A87090094B0E4 /* Build Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +224,7 @@
 		29B97314FDCFA39411CA2CEA /* LogitechLCDTool */ = {
 			isa = PBXGroup;
 			children = (
+				1B23AF800B6BFECB00D25073 /* AppleScripts */,
 				1BE97AD40B4C00DF001D0D92 /* notes_links.txt */,
 				1BD78AE20B4A87090094B0E4 /* Build Support */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -194,7 +253,6 @@
 				1BE97AF50B4D2478001D0D92 /* examples */,
 				1B745E590B4539ED002D019A /* DefaultPrefs.plist */,
 				1B745DE30B452CCC002D019A /* icon.icns */,
-				1B745D1A0B445ACE002D019A /* SystemAppleScripts.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
@@ -222,6 +280,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				1BD789610B494B740094B0E4 /* CopyFiles */,
+				1B23AF780B6BFEA500D25073 /* AppleScript */,
 			);
 			buildRules = (
 			);
@@ -256,7 +315,6 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				1B745D1B0B445ACE002D019A /* SystemAppleScripts.plist in Resources */,
 				1B745DE40B452CCC002D019A /* icon.icns in Resources */,
 				1B745E5A0B4539ED002D019A /* DefaultPrefs.plist in Resources */,
 				1BE97AFB0B4D2478001D0D92 /* examples in Resources */,

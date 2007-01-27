@@ -28,5 +28,8 @@
 - (void)registerUserScript:(NSString *)key code:(NSString *)code;
 - (NSString *)runUserScript:(NSString *)key;
 - (NSAppleScript *)compileAppleScript:(NSString *)code;
+- (NSAppleScript *)loadAppleScript:(NSString *)path;
+- (id)setPreference:(NSString *)key value:(NSString *)value;
+- (id)getPreference:(NSString *)key;
 @end
 

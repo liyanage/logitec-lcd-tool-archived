@@ -5,6 +5,7 @@
                 displayCurrentTabContents = id; 
                 displayHtmlTabContents = id; 
                 displayUrlTabContents = id; 
+                openConsole = id; 
                 openExamplesFolder = id; 
                 openLibraryFolder = id; 
                 showHelp = id; 

@@ -26,13 +26,15 @@
 
 
 - (void)setupAppleScripts {
-	NSString *sourceFile = [[NSBundle mainBundle] pathForResource:@"SystemAppleScripts" ofType:@"plist"];
-	NSDictionary *sources = [NSDictionary dictionaryWithContentsOfFile:sourceFile];
+
+	NSArray *scriptFiles = [[NSBundle mainBundle] pathsForResourcesOfType:@"scpt" inDirectory:@"Scripts"];
+
 	appleScripts = [[NSMutableDictionary dictionary] retain];
 
-	id key, keys = [sources keyEnumerator];
-	while (key = [keys nextObject]) {
-		NSAppleScript *script = [self compileAppleScript:[sources valueForKey:key]];
+	id path, paths = [scriptFiles objectEnumerator];
+	while (path = [paths nextObject]) {
+		NSString *key = [[path lastPathComponent] stringByDeletingPathExtension];
+		NSAppleScript *script = [self loadAppleScript:path];
 		if (script) [appleScripts setValue:script forKey:key];
 	}
 }
@@ -63,6 +65,17 @@
 }
 
 
+- (NSAppleScript *)loadAppleScript:(NSString *)path {
+	NSDictionary *errorInfo;
+	NSAppleScript *script = [[[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:errorInfo] autorelease];
+	if (!script) {
+		NSLog(@"Failed to load AppleScript code: '%@'", [errorInfo valueForKey:NSAppleScriptErrorMessage]);
+	}
+	return script;
+}
+
+
+
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector {
 	if (
@@ -70,7 +83,9 @@
 		aSelector == @selector(getVersion) ||
 		aSelector == @selector(runSystemScript:) ||
 		aSelector == @selector(registerUserScript:code:) ||
-		aSelector == @selector(runUserScript:)
+		aSelector == @selector(runUserScript:) ||
+		aSelector == @selector(setPreference:value:) ||
+		aSelector == @selector(getPreference:)
 	) return NO;
 	return [super isSelectorExcludedFromWebScript:aSelector];
 }
@@ -80,6 +95,8 @@
     if (sel == @selector(runSystemScript:)) return @"runSystemScript";
     if (sel == @selector(runUserScript:)) return @"runUserScript";
     if (sel == @selector(registerUserScript:code:)) return @"registerUserScript";
+    if (sel == @selector(getPreference:)) return @"getPreference";
+    if (sel == @selector(setPreference:value:)) return @"setPreference";
 	return nil;
 }
 
@@ -126,5 +143,13 @@
 	return [delegate getAppVersion];
 }
 
+- (id)setPreference:(NSString *)key value:(id)value {
+	[[NSUserDefaults standardUserDefaults] setValue:value forKey:[@"JSPrefs-" stringByAppendingString:key]];
+	return value;
+}
+
+- (id)getPreference:(NSString *)key {
+	return [[NSUserDefaults standardUserDefaults] valueForKey:[@"JSPrefs-" stringByAppendingString:key]];
+}
 
 @end

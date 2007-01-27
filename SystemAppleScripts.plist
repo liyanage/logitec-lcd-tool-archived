@@ -3,15 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>iTunesCurrentTrackTitle</key>
-	<string>tell application "iTunes" to name of current track</string>
+	<string>
+		tell application "System Events" to set iTunesRunning to exists process "iTunes"
+		if (not iTunesRunning) then return "(iTunes not running)"
+		tell application "iTunes" to name of current track
+	</string>
 	<key>iTunesCurrentTrackArtist</key>
-	<string>tell application "iTunes" to artist of current track</string>
+	<string>
+		tell application "System Events" to set iTunesRunning to exists process "iTunes"
+		if (not iTunesRunning) then return "(iTunes not running)"
+		tell application "iTunes" to artist of current track
+	</string>
 	<key>iTunesCurrentTrackDuration</key>
-	<string>tell application "iTunes" to duration of current track</string>
+	<string>
+		tell application "System Events" to set iTunesRunning to exists process "iTunes"
+		if (not iTunesRunning) then return "(iTunes not running)"
+		tell application "iTunes" to duration of current track
+	</string>
 	<key>iTunesPlayerPosition</key>
-	<string>tell application "iTunes" to player position</string>
+	<string>
+		tell application "System Events" to set iTunesRunning to exists process "iTunes"
+		if (not iTunesRunning) then return "(iTunes not running)"
+		tell application "iTunes" to player position
+	</string>
 	<key>iTunesCurrentTrackFullStatus</key>
 	<string><![CDATA[tell application "iTunes"
+
+	tell application "System Events"
+		if not exists process "iTunes" then
+			return "{'position': '0', 'duration': '0', 'name': '(iTunes not running)', 'artist': '(iTunes not running)', 'album': '(iTunes not running)'}"
+		end if
+	end tell
 	
 	set pos to player position
 	
@@ -39,9 +61,6 @@ end tell]]></string>
 	<key>iTunesPlayPause</key>
 	<string>tell application "iTunes" to playpause</string>
 	<key>visitEntropyWebsite</key>
-	<string>tell application "Safari"
-	activate
-	make new document with properties {URL:"http://www.entropy.ch/software/macosx/lcdtool/?softkey"}
-end tell</string>
+	<string>open location "http://www.entropy.ch/software/macosx/lcdtool/?softkey"</string>
 </dict>
 </plist>

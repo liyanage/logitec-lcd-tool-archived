@@ -33,6 +33,7 @@
 - (void)clearOffscreenWebView;
 - (BOOL)webViewUpdatesAllowed;
 - (IBAction)showHelp:(id)sender;
+- (IBAction)openConsole:(id)sender;
 - (IBAction)openExamplesFolder:(id)sender;
 - (IBAction)openLibraryFolder:(id)sender;
 - (void)setupNotificationSubscription;

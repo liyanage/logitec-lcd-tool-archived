@@ -159,6 +159,10 @@
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.entropy.ch/software/macosx/lcdtool/?showhelp"]];
 }
 
+- (IBAction)openConsole:(id)sender {
+	[[NSWorkspace sharedWorkspace] launchApplication:@"Console"];
+}
+
 - (IBAction)openExamplesFolder:(id)sender {
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"examples" ofType:@""];
 	[[NSWorkspace sharedWorkspace] openFile:path];
