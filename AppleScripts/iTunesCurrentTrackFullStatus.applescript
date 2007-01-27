@@ -2,7 +2,7 @@ tell application "iTunes"
 	
 	tell application "System Events"
 		if not (exists process "iTunes") then
-			return "{'position': '0', 'duration': '0', 'name': '(iTunes not running)', 'artist': '(iTunes not running)', 'album': '(iTunes not running)'}"
+			return "{'position': '0', 'duration': '0', 'name': '(press Play button to launch iTunes)', 'artist': '(iTunes not running)', 'album': '(iTunes not running)'}"
 		end if
 	end tell
 	
