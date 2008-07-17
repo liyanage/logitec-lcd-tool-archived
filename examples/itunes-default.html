@@ -7,7 +7,16 @@
 	function formatTime(sec) {var ss = Math.floor(sec % 60); ss = ss < 10 ? '0' + ss : ss; return Math.floor(sec/60) + ':' + ss}
 
 	function update() {
-		var itunes = eval(window.application.runSystemScript('iTunesCurrentTrackFullStatus').replace(/'\\''/g, "\\'"));
+
+		var itunes;
+		try {
+			var appleScriptResult = window.application.runSystemScript('iTunesCurrentTrackFullStatus');
+			itunes = eval('(' + window.application.runSystemScript('iTunesCurrentTrackFullStatus').replace(/'\\''/g, "\\'") + ')');
+		} catch (e) {
+			alert('unable to get iTunes status: ' + e + ', AppleScript result: ' + appleScriptResult);
+			stop();
+			return;
+		}
 		setText('pos', formatTime(itunes['position']));
 		setText('duration', formatTime(itunes['duration']));
 		setText('artist', itunes['artist']);

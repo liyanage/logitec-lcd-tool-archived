@@ -1,11 +1,5 @@
 
 
-todo
-
-- song name oben, album bei artist nicht song in mitte
-- wenn man previews aus dem store hört
-
-
 release checklist
 
 - uncomment appcast block
@@ -13,7 +7,6 @@ release checklist
 - notify versiontracker, macupdate, blog, forum
 - increment version in info plist
 - prepare next version appcast block.
-
 
 
 info links:
@@ -36,35 +29,6 @@ feedback links
 - http://www.tuaw.com/2007/01/03/logitechlcdtool-homegrown-mac-support-for-logitech-z-10-speake/
 
 
-
-mini functional spec
---------------------
-
-applet -> ordner mit html
-
-app main window
-
-table view mit applets
-- liste der applets
-  - active checkbox, titel, version, status
-  - type: built-in html, 3rd party html -> edit possible/not possible
-  - context menu: reveal in finder
-- applet status: aktiv, inaktiv, off, missing
-- checkbox bei apps -> off
-  - off -> kein webview, keine ressourcen
-- aktives applet selektiert -> speaker display
-- display button -> nächstes applet aktivieren
-- add applet mit + oder drag and drop
-- remove mit - oder drag and drop ausserhalb liste -> poof
-- drag and drop reordering -> cycle reihenfolge
-- html change detect -> reload
-
-applet set -> userdefaults
-program launch -> restore applets, activate first non-off applet
-applet not found -> status missing, rot
-- missing -> mostly disabled, need to drag in fresh copy
-
-- library access, special url, fallback / resource load delegate?
 
 
 
